@@ -1,0 +1,129 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "FastAPI",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/holdings": {
+      "get": {
+        "summary": "Get The Holdings File",
+        "description": "download the holdings file. that's what PMs do.  csv, json formats, gzip",
+        "operationId": "get_the_holdings_file_holdings_get",
+        "responses": {
+          "200": {
+            "description": "Return CSV or JSON",
+            "content": {
+              "application/json": {
+                "schema": {}
+              },
+              "application/csv": {}
+            }
+          }
+        }
+      }
+    },
+    "/tasks/holdings/run": {
+      "post": {
+        "summary": "Run The Holdings Task",
+        "description": "start the holdings file creation task.  Consumes the datamart odbc datasource and the local cache.",
+        "operationId": "run_the_holdings_task_tasks_holdings_run_post",
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/cache/update": {
+      "post": {
+        "summary": "Run The Cache Update Task",
+        "description": "update cache task",
+        "operationId": "run_the_cache_update_task_tasks_cache_update_post",
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/holdings": {
+      "get": {
+        "summary": "Get The Status Of The Holdings Task",
+        "description": "get the status of the holdings task",
+        "operationId": "get_the_status_of_the_holdings_task_tasks_holdings_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tasks/cache": {
+      "get": {
+        "summary": "Get The Status Of The Cache",
+        "description": "get the status of the cache",
+        "operationId": "get_the_status_of_the_cache_tasks_cache_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue": {
+      "get": {
+        "summary": "Get The Status Of The Task Queue",
+        "description": "get the status of the task queue",
+        "operationId": "get_the_status_of_the_task_queue_queue_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test": {
+      "get": {
+        "summary": "Test",
+        "description": "Test",
+        "operationId": "test_test_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
